@@ -1,0 +1,62 @@
+<div class="container">
+    <h4 style="text-align: center;">Address Infomation</h4>
+    <form [formGroup]="addressForm">
+        <div class="form-group ">
+            <label for="name">Address: </label>
+            <input id="name" type="text" class="form-control" maxlength="256" formControlName="address" required>
+        </div>
+        <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger"
+            style="margin-top: 20px;">
+
+            <div *ngIf="address.errors?.required">
+                Address is required.
+            </div>
+            <div *ngIf="address.errors?.maxlength">
+                Address number must be maximum 56 character.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Aditional: </label>
+            <input id="name" type="text" class="form-control" maxlength="256" formControlName="aditional">
+        </div>
+        
+        <div class="form-group">
+            <label for="name">State: </label>
+            <input id="name" type="text" class="form-control" maxlength="56" formControlName="state" required>
+        </div>
+        <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert alert-danger"
+            style="margin-top: 20px;">
+            <div *ngIf="state.errors?.required">
+                State is required.
+            </div>
+            <div *ngIf="state.errors?.maxlength">
+                State must be valid.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">City: </label>
+            <input id="name" type="text" class="form-control" maxlength="56" formControlName="city" required>
+        </div>
+        <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert alert-danger"
+            style="margin-top: 20px;">
+            <div *ngIf="city.errors?.required">
+                City is required.
+            </div>
+            <div *ngIf="city.errors?.maxlength">
+                City must be valid.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Pincode: </label>
+            <input id="name" type="text" class="form-control" maxlength="6" formControlName="pincode" (keyup)="numInputStream($event)" required>
+        </div>
+        <div *ngIf="pincode.invalid && (pincode.dirty || pincode.touched)" class="alert alert-danger"
+            style="margin-top: 20px;">
+            <div *ngIf="pincode.errors?.required">
+                Pincode is required.
+            </div>
+        </div>
+        <!-- <button type="submit" class="btn btn-primary mb-2" style="margin-top:20px;"
+            >Save</button> -->
+    </form>
+</div>

@@ -1,0 +1,76 @@
+<div class="container">
+    <h4 style="text-align: center;">Basic Infomation Form</h4>
+    <form [formGroup]="basicinfoForm">
+        <div class="form-group ">
+            <label for="name">Student Name: </label>
+            <input id="name" type="text" class="form-control" maxlength="56" formControlName="studentName"
+                (keyup)="charInputStream($event)" required>
+        </div>
+        <div *ngIf="studentName.invalid && (studentName.dirty || studentName.touched)" class="alert alert-danger"
+            style="margin-top: 20px;">
+
+            <div *ngIf="studentName.errors?.required">
+                Name is required.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Email: </label>
+            <input id="name" type="text" class="form-control" maxlength="112" formControlName="email"
+                (keyup)="emailInputStream($event)" required>
+        </div>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger"
+            style="margin-top: 20px;">
+
+            <div *ngIf="email.errors?.required">
+                Email is required.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Mobile: </label>
+            <input id="name" type="text" class="form-control" maxlength="10" minlength="10" formControlName="mobile"
+                (keyup)="numInputStream($event)" required>
+        </div>
+        <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger"
+            style="margin-top: 20px;">
+            <div *ngIf="mobile.errors?.required">
+                Mobile number is required.
+            </div>
+            <div *ngIf="mobile.errors?.minlength">
+                Mobile number must be valid.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Date of birth: </label>
+            <input id="name" type="date" class="form-control" maxlength="10" minlength="10" formControlName="dob"
+                required>
+        </div>
+        <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="alert alert-danger" style="margin-top: 20px;">
+            <div *ngIf="dob.errors?.required">
+                Date of birth number is required.
+            </div>
+            <div *ngIf="dob.errors?.minlength">
+                Date of birth must be valid.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Gender: </label><br>
+            <input type="radio" id="female" name="gender" value="female" formControlName="gender">
+            <label for="female">Female</label><br>
+            <input type="radio" id="male" name="gender" value="male" formControlName="gender">
+            <label for="male">Male</label><br>
+            <input type="radio" id="Other" name="gender" value="other" (click)="toggle()">
+            <label for="other">Other</label>
+        </div>
+        <div class="form-group" *ngIf="show">
+            <label for="name">Enter Gender:</label>
+            <input type="text" class="form-control" id="name" maxlength="12" formControlName="gender" required>
+        </div>
+        <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger" style="margin-top: 20px;">
+            <div *ngIf="gender.errors?.required">
+                Gender is required.
+            </div>
+        </div>
+
+        <!-- <button type="submit" class="btn btn-primary mb-2" style="margin-top:20px;">Save</button> -->
+    </form>
+</div>

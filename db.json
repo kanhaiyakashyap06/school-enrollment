@@ -1,0 +1,58 @@
+{
+  "studentinfo": [
+    {
+      "basicInfo": {
+        "studentName": "testing",
+        "email": "testing@gmail.com",
+        "mobile": "8787979879",
+        "dob": "2021-08-19",
+        "gender": "male"
+      },
+      "address": {
+        "address": "uiyiyy",
+        "aditional": "iiu",
+        "pincode": "123453",
+        "state": "Mumbai",
+        "city": "Bandra"
+      },
+      "id": 8
+    },
+    {
+      "basicInfo": {
+        "studentName": "Kanhaiya",
+        "email": "kanhaiya@gmail.com",
+        "mobile": "8978978798",
+        "dob": "2021-08-26",
+        "gender": "male"
+      },
+      "address": {
+        "address": "Daily Car Cleaning",
+        "aditional": "faridabad",
+        "pincode": "123231",
+        "state": "Haryana",
+        "city": "faridabad"
+      },
+      "id": 9
+    },
+    {
+      "basicInfo": {
+        "studentName": "Ashu",
+        "email": "ashu@gmail.com",
+        "mobile": "8978969657",
+        "dob": "1996-10-23",
+        "gender": "female"
+      },
+      "address": {
+        "address": "sector-11",
+        "aditional": "",
+        "pincode": "121008",
+        "state": "Haryana",
+        "city": "Faridabd"
+      },
+      "id": 10
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

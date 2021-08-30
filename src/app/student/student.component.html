@@ -1,0 +1,39 @@
+<div class="container" style="margin-top: 40px;">
+    <h4 style="text-align: center;color: darkblue;text-decoration:underline;">School Enrolment</h4>
+    <form [formGroup]="userForm" (ngSubmit)="submitfom()">
+        <div class="row">
+            <div class="col-sm-6">
+                <app-basicinfo formGroupName="basicInfo"></app-basicinfo>
+            </div>
+            <div class="col-sm-6">
+                <app-addressinfo formGroupName="address"></app-addressinfo>
+            </div>
+        </div>
+         <button type="submit" class="btn btn-primary mb-2" style="margin-top:20px;">Save</button>
+    </form>
+</div>
+<div class="container" style="margin-top: 20px;margin-bottom: 40px;">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4 style="text-align: center;">Student Detail</h4>
+        </div>
+    </div>
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+        <tr *ngFor="let s of studentData;let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{s.basicInfo.studentName}}</td>
+            <td>{{s.basicInfo.email}}</td>
+            <td>{{s.basicInfo.mobile}}</td>
+            <td>{{s.address.city}}</td>
+            <td>{{s.address.state}}</td>
+        </tr>
+    </table>
+</div>
